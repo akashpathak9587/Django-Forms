@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to File Management Portal </h1>
+    <form action="#" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if success %}
+            <p class="message">{{ success }}</p>
+        {% endif %}
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
